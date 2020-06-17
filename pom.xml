@@ -13,6 +13,7 @@
         <module>Reacotr</module>
         <module>web-flux</module>
         <module>design</module>
+        <module>vjudge</module>
     </modules>
 
     <properties>
