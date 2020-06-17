@@ -1,6 +1,6 @@
 package com.hujingli.vjudge.sdos;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 迪杰斯特拉算法
@@ -20,6 +20,8 @@ public class Djstl {
         int[][] value = new int[n+1][n+1];
 
         int[] dis = new int[n + 1]; // 表示存最短的路径是多少
+
+        int[] pre = new int[n + 1];
 
         // 初始化图  自己到自己的距离是0  其他的所有的默认为无穷大
         for (int i = 0; i < n + 1; i++) {
@@ -44,6 +46,7 @@ public class Djstl {
                 dis[b] = v;
             }
 
+
         }
         search(x, dis, value, n);
 
@@ -51,11 +54,14 @@ public class Djstl {
 
     private static void search(int x, int[] dis, int[][] value, int n){
         boolean[] mark = new boolean[n + 1];
+
         for (int i = 1; i <= n; i++) {
             mark[i] = false;
         }
         mark[x] = true;  // 表示当前点已经被加过了
         dis[x] = 0; // 自己到自己的距离是0
+
+        int[] pre = new int[n + 1];
 
         int count = 1; // 表示当前已经加了几个点了
         while(count <= n){
@@ -75,6 +81,7 @@ public class Djstl {
             count ++;
             for (int i = 1; i <= n  ; i++) {
                 if (!mark[i] && value[loc][i] != -1 && (dis[loc] + value[loc][i] < dis[i])){
+                    pre[i] = loc;
                     dis[i] = dis[loc] + value[loc][i];
                 }
             }
@@ -83,6 +90,19 @@ public class Djstl {
         for (int i = 1; i < dis.length; i++) {
             if (dis[i] != Integer.MAX_VALUE){
                 System.out.println("1->" + i +"的最短距离是:" + dis[i]);
+                System.out.print("路径为：" + i + "<-");
+                int index = pre[i];
+                for (int j = 0; j < pre.length-1; j++) {
+                    if (index != 0){
+                        System.out.print(index);
+                        index = pre[index];
+                        System.out.print("<-");
+                    }else {
+                        System.out.print(x);
+                        break;
+                    }
+                }
+                System.out.println();
             }else {
                 System.out.println("1->" + i +"的最短距离是: 无法到达");
             }
