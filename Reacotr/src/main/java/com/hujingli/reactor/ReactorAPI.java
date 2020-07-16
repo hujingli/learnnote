@@ -1,10 +1,7 @@
 package com.hujingli.reactor;
 
 import org.junit.Test;
-import org.reactivestreams.Subscription;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.SynchronousSink;
-
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
