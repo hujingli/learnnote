@@ -6,5 +6,10 @@ package com.hujingli.design.factory.simple;
  * @Description
  * @since
  */
-public class Car {
+public class Car implements Moveable {
+
+    @Override
+    public void go() {
+        System.out.println("car dududu ...");
+    }
 }

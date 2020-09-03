@@ -7,4 +7,9 @@ package com.hujingli.design.decorator;
  * @since
  */
 public class Main {
+
+    public static void main(String[] args) {
+        new ManDecorator(new Man("手", "头")).sleep();
+        new WomanDecorator(new Woman("手", "头")).sleep();
+    }
 }

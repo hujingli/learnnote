@@ -59,7 +59,7 @@ buy(); // 购票动作  购买完票之后调用提醒观察者方法提醒所�
 ```
 
 ```java
-Tickets implements Subject{
+class Tickets implements Subject{
     // 存放观察者的集合
     List<Observer> obs = new ArrayList<>();
 
@@ -82,14 +82,14 @@ Tickets implements Subject{
 
 2、有一个记录日志观察者  一个新增流水观察者  
 ```java
-update();
+void update();
 
 // 每个观察者都具有这个update()方法  当被观察者调用notifyObserver
 // 会调用已经注册的观察者的update()方法进行自己的业务操作。
 ```
 
 ```java
-LogObserver implements Observer{
+class  LogObserver implements Observer{
     update(){
         // 记录日志
     }
@@ -97,7 +97,7 @@ LogObserver implements Observer{
 ```
 
 ```java
-SeqObserver implements Observer{
+class SeqObserver implements Observer{
     update(){
         // 记录流水 
     }

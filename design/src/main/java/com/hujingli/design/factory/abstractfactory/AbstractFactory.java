@@ -6,5 +6,12 @@ package com.hujingli.design.factory.abstractfactory;
  * @Description
  * @since
  */
-public class AbstractFactory {
+public abstract class AbstractFactory {
+
+    abstract Weapon createWeapon();
+
+    abstract Food createFood();
+
+    abstract Vehicle createVehicle();
+
 }

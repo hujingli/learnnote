@@ -6,5 +6,15 @@ package com.hujingli.design.decorator;
  * @Description
  * @since
  */
-public class ManDecorator {
+public class ManDecorator extends PersonDecorator{
+
+    public ManDecorator(Person person) {
+        super(person);
+    }
+
+
+    @Override
+    public void sleep() {
+        System.out.println("男人用" +hand + "脱掉裤子");
+    }
 }

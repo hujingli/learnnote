@@ -7,4 +7,9 @@ package com.hujingli.design.factory.simple;
  * @since
  */
 public class PlaneFactory {
+
+    Moveable create(){
+        return new Plane();
+    }
+
 }

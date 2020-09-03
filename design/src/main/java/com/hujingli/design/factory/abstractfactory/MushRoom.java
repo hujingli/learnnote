@@ -6,5 +6,5 @@ package com.hujingli.design.factory.abstractfactory;
  * @Description
  * @since
  */
-public class MushRoom {
+public class MushRoom extends Food {
 }

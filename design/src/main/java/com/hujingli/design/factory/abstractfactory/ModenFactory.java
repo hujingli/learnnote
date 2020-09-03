@@ -6,5 +6,19 @@ package com.hujingli.design.factory.abstractfactory;
  * @Description
  * @since
  */
-public class ModenFactory {
+public class ModenFactory extends AbstractFactory{
+    @Override
+    Weapon createWeapon() {
+        return new AK47();
+    }
+
+    @Override
+    Food createFood() {
+        return new Bread();
+    }
+
+    @Override
+    Vehicle createVehicle() {
+        return new Car();
+    }
 }

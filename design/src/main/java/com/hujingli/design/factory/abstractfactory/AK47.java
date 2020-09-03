@@ -6,5 +6,5 @@ package com.hujingli.design.factory.abstractfactory;
  * @Description
  * @since
  */
-public class AK47 {
+public class AK47  extends Weapon{
 }

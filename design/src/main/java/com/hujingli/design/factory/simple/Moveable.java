@@ -6,5 +6,7 @@ package com.hujingli.design.factory.simple;
  * @Description
  * @since
  */
-public class Moveable {
+public interface Moveable {
+
+    void go();
 }

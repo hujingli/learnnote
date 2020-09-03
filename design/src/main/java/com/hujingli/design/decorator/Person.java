@@ -6,5 +6,17 @@ package com.hujingli.design.decorator;
  * @Description
  * @since
  */
-public class Person {
+public abstract class Person {
+
+    public Person(String head, String hand) {
+        this.head = head;
+        this.hand = hand;
+    }
+
+    protected String head;
+
+    protected String hand;
+
+    abstract void sleep();
+
 }

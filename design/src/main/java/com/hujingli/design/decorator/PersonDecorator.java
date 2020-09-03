@@ -6,5 +6,13 @@ package com.hujingli.design.decorator;
  * @Description
  * @since
  */
-public class PersonDecorator {
+public abstract class PersonDecorator extends Person {
+
+    protected Person person;
+
+    public PersonDecorator(Person person) {
+        super(person.hand, person.head);
+        this.person = person;
+    }
+
 }

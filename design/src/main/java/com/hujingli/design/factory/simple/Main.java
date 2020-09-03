@@ -7,4 +7,15 @@ package com.hujingli.design.factory.simple;
  * @since
  */
 public class Main {
+
+
+    public static void main(String[] args) {
+        Moveable moveable = new CarFactory().create();
+
+        moveable.go();
+
+        Moveable moveable1 = new PlaneFactory().create();
+        moveable1.go();
+    }
+
 }

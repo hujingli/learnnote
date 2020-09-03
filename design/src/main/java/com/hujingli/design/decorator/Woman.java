@@ -6,5 +6,15 @@ package com.hujingli.design.decorator;
  * @Description
  * @since
  */
-public class Woman {
+public class Woman extends Person {
+
+
+    public Woman(String head, String hand) {
+        super(head, hand);
+    }
+
+    @Override
+    void sleep() {
+
+    }
 }

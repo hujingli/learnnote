@@ -1,5 +1,7 @@
 package com.hujingli.batch.bean;
 
+import java.util.Objects;
+
 public class Person {
 
     private String lastName;
@@ -27,6 +29,20 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(lastName, person.lastName) &&
+                Objects.equals(firstName, person.firstName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName, firstName);
     }
 
     @Override

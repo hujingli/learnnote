@@ -6,5 +6,5 @@ package com.hujingli.design.factory.abstractfactory;
  * @Description
  * @since
  */
-public class Carpet {
+public class Carpet extends Vehicle{
 }
