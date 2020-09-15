@@ -15,12 +15,14 @@
         <module>design</module>
         <module>vjudge</module>
         <module>thread</module>
+        <module>netty</module>
     </modules>
 
     <properties>
         <reactor.version>3.3.6.RELEASE</reactor.version>
         <boot.version>2.3.1.RELEASE</boot.version>
         <mysql.version>8.0.20</mysql.version>
+        <netty.version>4.1.9.Final</netty.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +54,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
 
             <dependency>
