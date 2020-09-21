@@ -38,9 +38,10 @@ public class Client {
                     }
                 }
             });
+            future.sync();
 
             // 阻塞
-            future.sync();
+            future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
@@ -53,6 +54,7 @@ public class Client {
 class ClientChannelInitializer extends ChannelInitializer {
 
     protected void initChannel(Channel channel) throws Exception {
-
+        ChannelPipeline pipeline = channel.pipeline();
+        pipeline.addLast(new ClientHandler());
     }
 }

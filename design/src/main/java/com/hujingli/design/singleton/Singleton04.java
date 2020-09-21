@@ -6,7 +6,7 @@ package com.hujingli.design.singleton;
  * @since
  */
 public class Singleton04 {
-    private static Singleton04 singleton04 = null;
+    private static volatile Singleton04 singleton04 = null;
 
     private Singleton04() {
 

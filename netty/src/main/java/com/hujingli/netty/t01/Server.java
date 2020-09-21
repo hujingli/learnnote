@@ -2,6 +2,7 @@ package com.hujingli.netty.t01;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -28,7 +29,8 @@ public class Server {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            System.out.println(socketChannel);
+                            ChannelPipeline pipeline = socketChannel.pipeline();
+                            pipeline.addLast(new ServerChildHandler());
                         }
                     })
             .bind(8888)
