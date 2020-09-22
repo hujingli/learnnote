@@ -16,8 +16,18 @@ public class Test extends Parent {
     }
 
     public static void main(String[] args) {
-        Test test = new Test(10, 10);
-        test.hello();
+        Test test = new Test(10, 10){
+            {
+
+            }
+        };
+    }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "x=" + x +
+                "} " + super.toString();
     }
 }
 
