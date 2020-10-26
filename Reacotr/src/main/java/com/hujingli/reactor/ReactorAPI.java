@@ -2,6 +2,8 @@ package com.hujingli.reactor;
 
 import org.junit.Test;
 import reactor.core.publisher.Flux;
+
+import javax.xml.namespace.QName;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 public class ReactorAPI {
+
+    QName qName = new QName("xx", "xx");
 
 
     @Test

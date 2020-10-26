@@ -8,12 +8,15 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
 import io.netty.util.concurrent.EventExecutorGroup;
 
+import javax.xml.ws.WebServiceClient;
+
 /**
  * @author <a href="exphuhong@163.com>huhong<a>
  * @CreateTime 2020 年 09 月 21 日
  * @Description todo
  * @since 1.0
  */
+@WebServiceClient(wsdlLocation="dsdsfdsfdsf", targetNamespace="")
 public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override

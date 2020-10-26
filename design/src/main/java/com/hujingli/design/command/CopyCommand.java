@@ -1,15 +1,17 @@
 package com.hujingli.design.command;
 
 public class CopyCommand extends Command {
-    Content c;
+
+    private final Content c;
 
     public CopyCommand(Content c) {
+        super(new CopyReceiver(c));
         this.c = c;
     }
 
     @Override
-    public void doit() {
-        c.setMsg(c.getMsg() + c.getMsg());
+    public void execute() {
+        super.receiver.doSomething();
     }
 
     @Override

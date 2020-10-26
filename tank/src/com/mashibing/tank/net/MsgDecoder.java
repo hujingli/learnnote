@@ -14,18 +14,22 @@ public class MsgDecoder extends ByteToMessageDecoder{
 
 	@Override
 	protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-		if(in.readableBytes() < 8) return;
-		
+		if(in.readableBytes() < 8) return; // 判断消息头的长度是否正常
+
+		// 标记读指针的位置
 		in.markReaderIndex();
 		
 		MsgType msgType = MsgType.values()[in.readInt()];
 		int length = in.readInt();
-		
+
+		// 判断消息读完没有 如果没有读完则等
 		if(in.readableBytes()< length) {
 			in.resetReaderIndex();
 			return;
-		} 
-		
+		}
+
+
+		// 消息读完之后进行处理
 		byte[] bytes = new byte[length];
 		in.readBytes(bytes);
 		

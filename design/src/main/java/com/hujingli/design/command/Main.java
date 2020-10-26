@@ -4,17 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
         Content c = new Content();
-        InsertCommand insertCommand = new InsertCommand(c);
-        insertCommand.doit();
-        insertCommand.undo();
+
 
         CopyCommand copyCommand = new CopyCommand(c);
-        copyCommand.doit();
+        Invoker invoker = new Invoker();
+        invoker.setCommand(copyCommand);
+        invoker.action();
+        System.out.println(c.getMsg());
+
         copyCommand.undo();
 
-        DeleteCommand deleteCommand = new DeleteCommand(c);
-        deleteCommand.doit();
-        deleteCommand.undo();
+
 
         System.out.println(c.getMsg());
     }
