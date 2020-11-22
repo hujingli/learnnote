@@ -16,6 +16,7 @@
         <module>vjudge</module>
         <module>thread</module>
         <module>netty</module>
+        <module>jvm</module>
     </modules>
 
     <properties>
