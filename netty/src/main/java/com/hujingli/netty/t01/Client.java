@@ -26,7 +26,7 @@ public class Client {
             ChannelFuture future = bootstrap.group(group)
                     .channel(NioSocketChannel.class)
                     .handler(new ClientChannelInitializer())
-                    .connect("localhost", 8888);
+                    .connect("localhost", 12345);
 
             // 如果连接完成了注册的监听器会立即执行
             future.addListener(new ChannelFutureListener() {

@@ -29,6 +29,7 @@ public class LeetCode4 {
         }
 
         // 如果其中一个数组空了，那么直接取第二个数组的剩余的第k小个数
+
         if (len1 == 0) {
             return nums2[left2 + k - 1];
         }

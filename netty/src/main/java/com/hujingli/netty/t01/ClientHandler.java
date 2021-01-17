@@ -16,7 +16,6 @@ import javax.xml.ws.WebServiceClient;
  * @Description todo
  * @since 1.0
  */
-@WebServiceClient(wsdlLocation="dsdsfdsfdsf", targetNamespace="")
 public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
