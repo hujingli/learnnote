@@ -3,12 +3,15 @@ package com.hujingli.thread.cusvolatile;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class VolatileTest {
 
     static  boolean  shutdownRequest;
 
     static ThreadLocal<Integer> threadLocal  = new ThreadLocal<>();
+    ReadWriteLock lock = new ReentrantReadWriteLock();
 
 
     public static void main(String[] args) throws InterruptedException {
