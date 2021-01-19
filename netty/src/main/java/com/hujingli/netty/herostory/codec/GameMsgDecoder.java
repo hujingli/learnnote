@@ -18,7 +18,6 @@ public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
             return;
         }
 
-
         try {
             BinaryWebSocketFrame binaryWebSocketFrame = (BinaryWebSocketFrame) msg;
             ByteBuf byteBuf = binaryWebSocketFrame.content();
@@ -31,6 +30,9 @@ public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
                 case GameMsgProtocol.MsgCode.USER_ENTRY_CMD_VALUE:
                     cmd = GameMsgProtocol.UserEntryCmd.parseFrom(body);
                     break;
+                case GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_CMD_VALUE:
+                    cmd = GameMsgProtocol.WhoElseIsHereCmd.parseFrom(body);
+                    break;
                 default:
                     break;
             }
@@ -41,4 +43,6 @@ public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
             e.printStackTrace();
         }
     }
+
+
 }
