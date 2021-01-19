@@ -1,5 +1,6 @@
 package com.hujingli.netty.herostory;
 
+import com.hujingli.netty.herostory.codec.GameMsgDecoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -23,10 +24,14 @@ public class ServerMain {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             ChannelPipeline pipeline = socketChannel.pipeline();
-                            pipeline.addLast(new HttpServerCodec(), new HttpObjectAggregator(65536), new WebSocketServerProtocolHandler("/webSocket"), new GameMsgHandler());
+                            pipeline.addLast(new HttpServerCodec(),
+                                    new HttpObjectAggregator(65536),
+                                    new WebSocketServerProtocolHandler("/websocket"),
+                                    new GameMsgDecoder(),
+                                    new GameMsgHandler());
                         }
                     });
-            bootstrap.childOption(ChannelOption.SO_BACKLOG, 128);
+//            bootstrap.childOption(ChannelOption.SO_BACKLOG, 128);
             bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
             ChannelFuture future = bootstrap.bind(12345);
             future.sync();
