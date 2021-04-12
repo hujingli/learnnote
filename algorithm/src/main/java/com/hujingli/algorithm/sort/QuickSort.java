@@ -6,17 +6,17 @@ package com.hujingli.algorithm.sort;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {3, 5, 4, 3, 2, 1, 4};
+        int[] arr = {3, 5, 4, 3, 2, 1, 4}; 
         int[] ints = netherlandsFlag(arr, 0, arr.length - 1);
         for (int anInt : ints) {
             System.out.print(anInt + " ");
             System.out.println();
         }
-
-        quickSort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
+//
+//        quickSort(arr);
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print(arr[i] + " ");
+//        }
     }
 
     // ºÉÀ¼¹úÆìÎÊÌâ

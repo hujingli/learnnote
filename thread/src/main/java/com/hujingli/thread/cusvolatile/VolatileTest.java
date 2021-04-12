@@ -11,11 +11,13 @@ public class VolatileTest {
     static  boolean  shutdownRequest;
 
     static ThreadLocal<Integer> threadLocal  = new ThreadLocal<>();
-    ReadWriteLock lock = new ReentrantReadWriteLock();
+    static ReadWriteLock lock = new ReentrantReadWriteLock();
 
 
     public static void main(String[] args) throws InterruptedException {
         Thread[] threads = new Thread[5];
+
+        lock.readLock().lock();
 
         CountDownLatch countDownLatch = new CountDownLatch(threads.length);
 
