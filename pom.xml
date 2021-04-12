@@ -13,11 +13,10 @@
         <module>Reacotr</module>
         <module>web-flux</module>
         <module>design</module>
-        <module>vjudge</module>
         <module>thread</module>
         <module>netty</module>
-        <module>jvm</module>
         <module>algorithm</module>
+        <module>rocketmq</module>
     </modules>
 
     <properties>
@@ -26,6 +25,33 @@
         <mysql.version>8.0.20</mysql.version>
         <netty.version>4.1.9.Final</netty.version>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.hujingli.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencyManagement>
         <dependencies>
