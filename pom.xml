@@ -22,7 +22,7 @@
     <properties>
         <reactor.version>3.3.6.RELEASE</reactor.version>
         <boot.version>2.3.1.RELEASE</boot.version>
-        <mysql.version>8.0.20</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <netty.version>4.1.9.Final</netty.version>
     </properties>
 
